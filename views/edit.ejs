@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <head>
+        <%- include("./partials/head.ejs", {title: "Edit Budget Item"}) %>
+    </head>
+</head>
+<body>
+    
+    <div class="container">     
+        <h1>Update Budget Item</h1>
+
+            <form action="/budgets/<%= index %>?_method=PUT" method="POST">
+                Date: <input type="text" name="date" value="<%=budgetItem.date%>"><br>
+                Name: <input type="text" name="name" value="<%=budgetItem.name%>"><br>
+                From: <input type="text" name="from" value="<%=budgetItem.from%>"><br>
+                Amount: <input type="number" name="amount" value="<%=budgetItem.amount%>"><br>
+                Tags: <input type="text" name="tags" size="50" value="<%=budgetItem.tags.toString()%>"><br>
+                <input type="submit" value="UPDATE">
+            </form>
+    </div>
+</body>
+</html>

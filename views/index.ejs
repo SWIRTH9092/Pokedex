@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include("./partials/head.ejs", {title: "List Pokemon"}) %>
+    </head>
+<body>
+    <h1>List of Pokemon</h1>
+        <a href="/Pokedex/new"><button type="button">New</button></a>
+        <div class="container pokelist">
+            <% let workImg = ''
+                allpokemon.forEach((v, index) =>{ %> 
+                        <a href="/pokemon/<%=index%>">
+                            <img src ="<%=v.img%>">
+                        </a>
+            <% }) %> 
+        </div>
+    </div>
+</body>
+</html>

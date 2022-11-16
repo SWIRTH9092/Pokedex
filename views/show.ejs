@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <head>
+        <%- include("./partials/head.ejs", {title: "View Budget Item"}) %>
+    </head>
+</head>
+<body>
+    <div class="container">
+     <h1><%=budgetItem.name%></h1>
+        <a href="/budgets"><button type="button">BACK</button></a>
+        <a href="/budgets/<%= index %>/edit"><button>EDIT</button></a>
+
+        <table>
+            <tr>
+                <td class="first-child">date</td>
+                <td class="first-child"><%=budgetItem.date%></td>
+            </tr>
+            <tr>
+                <td class="first-child">name</td>
+                <td class="first-child"><%=budgetItem.name%></td>
+            </tr>
+            <tr>
+                <td class="first-child">from</td>
+                <td class="first-child"><%=budgetItem.from%></td>
+            </tr>
+            <tr>
+                <td class="first-child">amount</td>
+                <td class="first-child"><%=budgetItem.amount%></td>
+            </tr>
+            <tr>
+                <td class="first-child">tags</td>    
+                <td class="first-child"><%=budgetItem.tags.toString()%></td>
+            
+            </tr>
+        </table>
+    </div>
+     
+</body>
+</html>

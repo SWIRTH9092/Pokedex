@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <head>
+        <%- include("./partials/head.ejs", {title: "New Budget Item"}) %>
+    </head>
+</head>
+<body>
+    <div class="container"> 
+        <h1>New Budget Item</h1>
+            <form action="/budgets/" method="POST">
+                Date: <input type="text" name="date"><br>
+                Name: <input type="text" name="name"><br>
+                From: <input type="text" name="from"><br>
+                Amount: <input type="number" name="amount"><br>
+                Tags: <input type="text" name="tags" size="50"><br>
+                <input type="submit" value="CREATE">
+            </form>
+    </div>
+</body>
+</html>
