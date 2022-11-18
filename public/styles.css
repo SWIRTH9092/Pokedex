@@ -1,3 +1,56 @@
-.pokelist {
-    display: inline;
+* body {
+    background-color: cornsilk
 }
+
+.card {
+    display: inline-block;
+    margin: 0 40px 0 0;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 200px;
+    height: auto;
+    text-align: center;
+    padding: 2rem 0 2rem 0;
+    background-color: red;
+    margin: 20px;
+    border: 10px;
+    border-radius: 8px;
+   }
+  
+  .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+  
+  .info-container {
+    padding: 2px 16px;
+    position: relative;
+    text-align: center;
+   }
+
+  .poke-image {
+    height: auto;
+    width: 175px;
+    text-align: center;
+    border: 10px;
+    border-radius: 8px;
+  }
+
+  .buttons {
+    padding-top: 10px;
+    background-color:blue;
+    border-color: blue;
+    border: 8px;
+    border-radius: 8px;
+  }
+  .button {
+    color: black; 
+    font-weight: bold; 
+  }
+  #button {
+    background-color: yellow;
+    font-weight: bold;
+    color: black;
+  }
+  /* .papa-container {
+    display: inline;
+  } */

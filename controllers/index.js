@@ -1,5 +1,5 @@
 //get express package
-const { response } = require('express');
+const { response, application } = require('express');
 const express = require('express')
 
 //get MethodOverride Package
@@ -16,6 +16,7 @@ const pokemon = require('../models/pokemon')
 // for ejs-helpers 
 const helpers = require("./ejs-helpers.js")
 
+// set the default template extension
 
 
 // HOME ROUTE - Just redirects you to budgets index for now
@@ -25,7 +26,7 @@ router.get("/", (req, res) => res.redirect("/Pokedex"))
 router.get('/Pokedex', (req,res) => {
     // res.render(template, data)
     res.render(
-        'index.ejs',
+        'index',
         {
             allpokemon:pokemon
         }
