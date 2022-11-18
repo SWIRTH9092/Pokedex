@@ -19,8 +19,8 @@
                 <div class="buttons">
                     <a href="/Pokedex/<%=index%>"><button type="button" id="button">Show</button>
                     </a>
-                    <a href="/Pokedex/<%=index%>">
-                    <button type="button" id="button">Delete</button>
+                    <form action="/Pokedex/<%= index %>?_method=DELETE" method="POST" >
+                        <input id="button" type="submit" value="Delete">
                     </a>
                 </div>
             </div>

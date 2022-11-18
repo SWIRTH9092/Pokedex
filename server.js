@@ -10,6 +10,9 @@ const pokemon = require('./controllers/index');
 // set the default template extension
 app.set("view engine", "ejs")
 
+// logging middleware
+app.use(morgan("tiny"))  // logging middleware
+
 //changes the views folder
 // app.set("views", process.cwd() + "/views2")
 
