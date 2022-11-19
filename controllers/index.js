@@ -20,9 +20,6 @@ router.use(methodOverride("_method")) // swap the method if the url has a ?_meth
 
 router.use("/static", express.static("public")) // it's going serve files from a folder called "public" under /static example public/styles.css => /static/styles.css
 
-
-
-
 // set the default template extension
 
 
@@ -73,26 +70,25 @@ router.put("/Pokedex/:index", (req, res) => {
  
   // req.body.amount = workAmount
  
-  // convert tags to an array
-  // let workTags = [];
-  // workTags = req.body.tags.split(",")
- 
-  //removed leading and trailing spaces from array element
-  // workTags = workTags.map (function (el){
-  //     return el.trim();
-  // });
-  // req.body.tags = workTags
+  // convert type to an array and them remove leading and trailing spaces
+  let workType = [];
+  workType = req.body.type.split(",")
+  
+  workType = workType.map (function (el){return el.trim();});
+  req.body.type = workType
+
+  console.log("req.body", req.body)
+  console.log("req.body.type",req.body.type)
+
+  // updating Pokemon - for fields on edit form
+    pokemon[req.params.index].name = req.body.name
+    pokemon[req.params.index].img = req.body.img
+    pokemon[req.params.index].type = req.body.type
      
-  // // updating Budget
-  //    Budget[req.params.index] = req.body
  
   // redirect user back to index
-    //  res.redirect("/Pokedex")
+      res.redirect("/Pokedex")
 })
-  
-   
- 
-
 
   //SHOW ROUTE - GET to /Pokedex - Returns a info for a pokemon
 router.get("/Pokedex/:index", (req, res) => {
