@@ -4,14 +4,16 @@
         <%- include("./partials/head.ejs", {title: "Pokedex"}) %>
     </head>
 <body>
-    <h1>Pokedex</h1>
-    <div>
-            <a href="/Pokedex/new"><button type="button">New</button></a>
+    <h1 id="pagetitle">Pokedex</h1>
+    <div class="newbutdiv">
+            <a href="/Pokedex/new" >
+                <button type="button" id="newbut">Add a New Pokemon</button>
+            </a>
     </div>
     <div class="papa-container">
         <% allpokemon.forEach((v, index) =>{ %>           
-        <div class ="card">
-            <a  href="/pokemon/<%=index%>">
+        <div id="card">
+            <a  href="/Pokedex/<%=index%>">
                     <img src="<%=v.img%>" class="poke-image" alt="<%=v.name%>">
             </a>
             <div class="info-container">   

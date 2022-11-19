@@ -1,26 +1,55 @@
+/* @media (min-width: 350) {
+  #card {
+    display: flex;
+    justify-items: center;
+  }
+} */
+
+
 * body {
     background-color: cornsilk
 }
+#pagetitle {
+  text-align: center;
+  justify-content: center;
+  background-color: blue;
+  padding: 10px 20px 10px 40px;
+  margin-top: 100px;
+  margin-bottom: 50px;
+  color: yellow;
+  border: 8px solid red;
+}
 
-.card {
-    display: inline-block;
-    margin: 0 40px 0 0;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    transition: 0.3s;
+.newbutdiv {
+  text-align: center;
+
+}
+#newbut{
+  background-color: red;
+  border: 5px solid blue;
+  color: black;
+  text-align: justify;
+  padding-bottom: 30px;
+  font-size: 2rem;
+  margin-bottom: 20px;
+
+}
+
+#card {
+   display: inline-block;
+   text-align: justify;
+    /* margin: 0 40px 0 0; */
+    margin: 0 auto;
     width: 200px;
-    height: auto;
+    height: 350px;
     text-align: center;
     padding: 2rem 0 2rem 0;
     background-color: red;
     margin: 20px;
-    border: 10px;
+    border: 5px solid blue;
     border-radius: 8px;
-   }
-  
-  .card:hover {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-  }
-  
+      }
+
   .info-container {
     padding: 2px 16px;
     position: relative;
@@ -28,8 +57,9 @@
    }
 
   .poke-image {
-    height: auto;
-    width: 175px;
+    height: 175px;
+    width: auto;
+    max-width: 175px;
     text-align: center;
     border: 10px;
     border-radius: 8px;
@@ -41,16 +71,30 @@
     border-color: blue;
     border: 8px;
     border-radius: 8px;
+    position: relative;
   }
-  .button {
-    color: black; 
-    font-weight: bold; 
-  }
+
   #button {
     background-color: yellow;
     font-weight: bold;
     color: black;
+    position: relative;
+  }
+
+  .stats {
+    text-decoration: none;
+  }
+
+  hr {
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 1px;
   }
   /* .papa-container {
-    display: inline;
+    display: inline-block;
+
   } */
