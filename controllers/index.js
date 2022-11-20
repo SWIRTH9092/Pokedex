@@ -55,14 +55,60 @@ router.get("/Pokedex/:index/edit", (req, res) => {
     helpers 
   })
 })
+// New Route - Get to /Pokedex/new - render a page with a form to create a new thing
+router.get('/Pokedex/new', (req, res)=> {
+    res.render("new.ejs")
+})
 
-router.put("/Pokedex/:index", (req, res) => {
+//new route - post to /Pokedex- receive data from the data from the form and create a new fruit then redirect the user back to index
 
-  // convert type to an array and them remove leading and trailing spaces
+router.post("/Pokedex", (req, res)=> {
+
     let workType = [];
     workType = req.body.type.split(",")
     workType = workType.map (function (el){return el.trim();});
     req.body.type = workType
+    req.body= {
+        ...req.body,
+        stats: {
+          hp: req.body.stats[0],
+          attack: req.body.stats[1],
+          defense: req.body.stats[2],
+          spattack:req.body.stats[3],
+          spdefense: req.body.stats[4],
+          speed: req.body.stats[5]
+        },
+        damages: {
+          normal: req.body.damages[0],
+          fire: req.body.damages[1],   
+          wate: req.body.damages[2],
+          electric: req.body.damages[3],
+          grass: req.body.damages[4],
+          ice: req.body.damages[5],
+          fight: req.body.damages[6],
+          poison: req.body.damages[7],
+          ground: req.body.damages[8],
+          flying: req.body.damages[9],
+          psychic: req.body.damages[10],
+          bug: req.body.damages[11],
+          rock: req.body.damages[12],
+          ghost: req.body.damages[13],
+          dragon: req.body.damages[14],
+          dark: req.body.damages[15],
+          steel: req.body.damages[16]  
+        }
+    }
+    pokemon.push(req.body)
+    // redirect back to idnex page
+    res.redirect("/Pokedex")
+
+    //  res.json(req.headers, req.body, req,method)
+
+})
+router.put("/Pokedex/:index", (req, res) => {
+
+  // convert type to an array and them remove leading and trailing spaces
+ 
 
   //Update stats
   let workStats = pokemon[req.params.index].stats;

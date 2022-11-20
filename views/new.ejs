@@ -4,15 +4,13 @@
 <body>
     <%- include("./partials/header.ejs", {title: "Add Pokemon"}) %> 
     <div buttoneditdiv>
-        <a href="/Pokedex"><button type="button" id="buttonedit">Home/button></a><br>
-        <a href="/Pokedex/<%=index%>"><button type="button" id="buttonedit">Show</button></a>
-        <input id="buttonedit" type="submit" value="UPDATE">
+        <a href="/Pokedex"><button type="button" id="buttonedit">Home</button></a><br>
     </div>
 
-    <div class="container">     
-        <form action="/Pokedex/<%= index %>?_method=PUT" method="POST">
+    <div class="container">   
+        <form action="/Pokedex" method="POST">  
             <fieldset>
-                <legend>Update Basic Information</legend>
+                <legend>Basic Information</legend>
                 <div class="basic">
                     Name: <input type="text" name="name" placeholder="pokemon name">
                     Image: <input type="text" name="img" size="50" placeholder="pokemon image address"><br>
@@ -61,7 +59,7 @@
                     steel: <input type="text" name="damages" placeholder="steel damage"><br>   
                 </div>
             </fieldset>
-
+            <input type="submit" id="buttonedit" value="Add Pokemon">
             </form>
     </div>
 </body>
