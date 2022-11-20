@@ -48,7 +48,7 @@ router.delete("/Pokedex/:index", (req, res) => {
 // EDIT route = GET to /Pokedex/:index/edit - render a form to edit the Pokemon Info
 router.get("/Pokedex/:index/edit", (req, res) => {
   // render edit.ejs with the existing Pokemon data
-  console.log("pokemonInfo - edit:", pokemon[req.params.index] )
+  console.log("pokemon - edit",req.body.damages)
   res.render("edit.ejs", {
     pokemonInfo: pokemon[req.params.index],
     index: req.params.index,  
@@ -57,35 +57,49 @@ router.get("/Pokedex/:index/edit", (req, res) => {
 })
 
 router.put("/Pokedex/:index", (req, res) => {
-  console.log(req.header)
-  console.log("req.body", req.body)
-  // console.log("req.body.type",req.body.type)
-  // convert amount from string to number
-  // let workAmount = 0;
-  // if (!req.body.amount) {
-  //    workAmount = 0
-  // }  else{
-  //    workAmount = parseInt(req.body.amount)
-  // }
- 
-  // req.body.amount = workAmount
- 
+
   // convert type to an array and them remove leading and trailing spaces
-  let workType = [];
-  workType = req.body.type.split(",")
+    let workType = [];
+    workType = req.body.type.split(",")
+    workType = workType.map (function (el){return el.trim();});
+    req.body.type = workType
+
+  //Update stats
+  let workStats = pokemon[req.params.index].stats;
+  workStats.hp = req.body.stats[0];
+  workStats.attack = req.body.stats[1];
+  workStats.defense = req.body.stats[2];
+  workStats.spattack = req.body.stats[3];
+  workStats.spdefense = req.body.stats[4];
+  workStats.speed = req.body.stats[5];
   
-  workType = workType.map (function (el){return el.trim();});
-  req.body.type = workType
-
-  console.log("req.body", req.body)
-  console.log("req.body.type",req.body.type)
-
-  // updating Pokemon - for fields on edit form
-    pokemon[req.params.index].name = req.body.name
-    pokemon[req.params.index].img = req.body.img
-    pokemon[req.params.index].type = req.body.type
+  //updating Damages
+  let workDamages = pokemon[req.params.index].damages;
+  workDamages.normal = req.body.damages[0];
+  workDamages.fire = req.body.damages[1];    
+  workDamages.water = req.body.damages[2];
+  workDamages.electric = req.body.damages[3];
+  workDamages.grass = req.body.damages[4];
+  workDamages.ice = req.body.damages[5];
+  workDamages.fight = req.body.damages[6];
+  workDamages.poison = req.body.damages[7];
+  workDamages.ground = req.body.damages[8];
+  workDamages.flying = req.body.damages[9];
+  workDamages.psychic = req.body.damages[10];
+  workDamages.bug = req.body.damages[11];
+  workDamages.rock = req.body.damages[12];
+  workDamages.ghost = req.body.damages[13];
+  workDamages.dragon = req.body.damages[14];
+  workDamages.dark = req.body.damages[15];
+  workDamages.steel = req.body.damages[16];   
      
- 
+  // updating Pokemon - for fields on edit form
+  pokemon[req.params.index].name = req.body.name;
+  pokemon[req.params.index].img = req.body.img;
+  pokemon[req.params.index].type = req.body.type;
+  pokemon[req.params.index].stats = workStats;
+  pokemon[req.params.index].damages = workDamages;
+   
   // redirect user back to index
       res.redirect("/Pokedex")
 })

@@ -20,13 +20,25 @@
                     <h4>Types</h4>
                         Type: <input type="text" name="type" size="50" value="<%=pokemonInfo.type.toString()%>"><br>
                 </div>
+
                 <hr><br>
-                <!-- <% Object.entries(pokemonInfo.type).forEach((v, index) =>{ %>
-                    <input type="text" name="type" value="<%=pokemonInfo.type[index]%>"><br>
-                    <% }) %> 
-                    <input type="text" name="type" placeholder="add New Type">                -->
-<!-- 
-                Type: <input type="text" name="type" size="50" value="<%=pokemonInfo.type.toString()%>"><br> -->
+              
+                <div class="stats"> 
+                    <h4>Stats</h4>
+                    <% Object.entries(pokemonInfo.stats).forEach((v, index) =>{ %>
+                        <%=v[0]%>: <input type="text" name="stats" value="<%=v[1]%>"><br>
+                        <% }) %> 
+              
+                <hr><br>
+                <div class="damages">
+                    <h4>Damages</h4>    
+                    <% Object.entries(pokemonInfo.damages).forEach((v, index) =>{ %>
+                        <%=v[0]%>: <input type="text" name="damages" value="<%=v[1]%>"><br>
+                        <% }) %> 
+                </div>
+
+                <hr><br>
+
                 <input type="submit" value="UPDATE">
             </form>
     </div>
