@@ -11,7 +11,6 @@
 }
 #pagetitle {
   text-align: center;
-  justify-content: center;
   background-color: blue;
   padding: 10px 20px 10px 40px;
   margin-bottom: 50px;
@@ -48,6 +47,7 @@
     border: 5px solid blue;
     border-radius: 8px;
       }
+
 
   .info-container {
     padding: 2px 16px;
@@ -112,30 +112,79 @@
   fieldset {
       border-width: 2px;
       color: red;
+      margin-left: 5px;
+      margin-right: 5px;
+      font-size: 1.25rem;
     }
 
+ 
   .basic {
     text-align: center;
   }
 
   .type{
     text-align: center;
+    text-decoration: none;
   }
 
   .stats {
     text-align: center;
-  }
+    margin: 0 3rem 0 3rem;
+    border: none;
+    text-align: left;
+   
 
-  .damages {
-    text-align: center;
   }
-
+  #showcard {
+    display: inline-block;
+    text-align: justify;
+      /* margin: 0 40px 0 0; */
+      margin: 0 auto;
+      width: 45rem;
+      height: 111rem;
+      text-align: center;
+      padding: 2rem 0 2rem 0;
+      background-color: red;
+      margin: 20px;
+      border: 10px solid blue;
+      border-radius: 8px;
+        }
+  #displaycard {
+    border-width: 2px;
+    color: yellow;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    font-size: 2rem;
+  }
   .showname {
     text-align: center;
   }
   .showimage {
-    border: 8px solid red;
-    border-radius: 5px;
+    height: 250px;
+    width: auto;
+    max-width: 325px;
+    text-align: center;
+    border: 10px;
+    border-radius: 8px;
+  }
+  .showinfo {
+    padding-top: 10px;
+    background-color:blue;
+    border-color: blue;
+    border: 8px;
+    border-radius: 8px;
+    position: relative;
+    padding-bottom: 1.5rem;
+  }
+
+  table, td, th {
+    border-collapse: collapse;
+  }
+
+  td {
+    border: 1px solid black;
+    border-top:none;
+    border-bottom: none;
   }
   /* .papa-container {
     display: inline-block;

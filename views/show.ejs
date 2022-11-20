@@ -10,30 +10,69 @@
                 <input id="button" type="submit" value="Delete">
     </div>
     <div class="container showname">
-        <h1><%=pokemonInfo.name%></h1>
+       <div id="showcard">
+            <div class="info-container"> 
+                <img src="<%=pokemonInfo.img%>"  alt="<%=pokemonInfo.name%>" class="showimage">
+                <h4><b><%=pokemonInfo.name%></b></h4>
+                <div class="showinfo">
+                    <fieldset id="displaycard">
+                        <legend>Types</legend>
+                        <p><%=pokemonInfo.type.toString().replace(",",", ")%>
+                        </p>
+                    </fieldset>
+                    
+                    <fieldset id="displaycard">
+                        <legend>Stats</legend>
+                        <table cellspacing="0">
+                            <%  const workStats = Object.entries(pokemonInfo.stats) %>
+                                <tr>
+                                    <td>
+                                        <p class="stats">
+                                            <%=workStats[0] [0]%>: <%=workStats[0] [1]%><br>
+                                            <%=workStats[1] [0]%>: <%=workStats[1] [1]%><br>
+                                            <%=workStats[2] [0]%>: <%=workStats[2] [1]%></p>
+                                    </td>
+                                    <td>
+                                        <p class="stats">
+                                            <%=workStats[3] [0]%>: <%=workStats[3] [1]%><br>
+                                            <%=workStats[4] [0]%>: <%=workStats[4] [1]%><br>
+                                            <%=workStats[5] [0]%>: <%=workStats[5] [1]%></p>
+                                    </td>
+                        </table>
+                    </fieldset>
 
-        <div>
-            <img src="<%=pokemonInfo.img%>"  alt="<%=pokemonInfo.name%>" class="showimage">
-        </div>
-        <div class="type">
-            <ul>Pokemon Types</ul>
-            <% pokemonInfo.type.forEach((v, index) =>{ %>
-                <li class="type"> <%=v%></li>              
-            <% }) %> 
-        </div>
-        <div class="stats">
-            <ul>Pokemon Stats</ul> 
-                <% Object.entries(pokemonInfo.stats).forEach((v, index) =>{ %>                
-                    <li class="stats"><%=v[0]%>: <%=v[1]%></li>
-                <% }) %>
-        </div>
-
-        <div class="damages">
-            <ul>Pokemon Damages</ul> 
-                <%  Object.entries(pokemonInfo.damages).forEach((v, index) =>{ %>                
-                        <li class="damages"><%=v[0]%>: <%=v[1]%></li>
-                <% }) %>
-        </div>
+                    <fieldset id="displaycard">
+                        <legend>Damages</legend>
+                        <table cellspacing="0">
+                            <%  const workDamages = Object.entries(pokemonInfo.damages) %>
+                                <tr>
+                                    <td>
+                                        <p class="stats">
+                                            <%=workDamages[0] [0]%>: <%=workDamages[0] [1]%><br>
+                                            <%=workDamages[1] [0]%>: <%=workDamages[1] [1]%><br>
+                                            <%=workDamages[2] [0]%>: <%=workDamages[2] [1]%><br>
+                                            <%=workDamages[3] [0]%>: <%=workDamages[3] [1]%><br>
+                                            <%=workDamages[4] [0]%>: <%=workDamages[4] [1]%><br>
+                                            <%=workDamages[5] [0]%>: <%=workDamages[5] [1]%><br>
+                                            <%=workDamages[6] [0]%>: <%=workDamages[6] [1]%><br>
+                                            <%=workDamages[7] [0]%>: <%=workDamages[7] [1]%><br>
+                                            <%=workDamages[8] [0]%>: <%=workDamages[8] [1]%><p>
+                                    </td>
+                                    <td>
+                                        <p class="stats">
+                                            <%=workDamages[9] [0]%>: <%=workDamages[9] [1]%><br>
+                                            <%=workDamages[10] [0]%>: <%=workDamages[10] [1]%><br>
+                                            <%=workDamages[11] [0]%>: <%=workDamages[11] [1]%><br>
+                                            <%=workDamages[12] [0]%>: <%=workDamages[12] [1]%><br>
+                                            <%=workDamages[13] [0]%>: <%=workDamages[13] [1]%><br>
+                                            <%=workDamages[14] [0]%>: <%=workDamages[14] [1]%><br>
+                                            <%=workDamages[15] [0]%>: <%=workDamages[15] [1]%><br>
+                                            <%=workDamages[16] [0]%>: <%=workDamages[16] [1]%><p>
+                                    </td>
+                        </table>
+                    </fieldset>
+                </div>
+            </div>
     </div>
 
      
