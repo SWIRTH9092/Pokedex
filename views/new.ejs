@@ -1,20 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <head>
-        <%- include("./partials/head.ejs", {title: "New Budget Item"}) %>
-    </head>
-</head>
+    <%- include("./partials/head.ejs", {title: "Add Pokemon"}) %>
 <body>
-    <div class="container"> 
-        <h1>New Budget Item</h1>
-            <form action="/budgets/" method="POST">
-                Date: <input type="text" name="date"><br>
-                Name: <input type="text" name="name"><br>
-                From: <input type="text" name="from"><br>
-                Amount: <input type="number" name="amount"><br>
-                Tags: <input type="text" name="tags" size="50"><br>
-                <input type="submit" value="CREATE">
+    <%- include("./partials/header.ejs", {title: "Add Pokemon"}) %> 
+    <div buttoneditdiv>
+        <a href="/Pokedex"><button type="button" id="buttonedit">Home/button></a><br>
+        <a href="/Pokedex/<%=index%>"><button type="button" id="buttonedit">Show</button></a>
+        <input id="buttonedit" type="submit" value="UPDATE">
+    </div>
+
+    <div class="container">     
+        <form action="/Pokedex/<%= index %>?_method=PUT" method="POST">
+            <fieldset>
+                <legend>Update Basic Information</legend>
+                <div class="basic">
+                    Name: <input type="text" name="name" placeholder="pokemon name">
+                    Image: <input type="text" name="img" size="50" placeholder="pokemon image address"><br>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend class="legend">Types</legend>
+                <div class="type">
+                    Type: <input type="text" name="type" size="50" placeholder="type"><br>
+                </div>
+            </fieldset>
+            
+            <fieldset>
+                <legend class="legend">Stats</legend>
+                <div class="stats"> 
+                    hp: <input type="text" name="stats" placeholder="hp stat"><br>
+                    attack: <input type="text" name="stats" placeholder="attack stat"><br> 
+                    defense: <input type="text" name="stats" placeholder="defense stat"><br>
+                    special attack: <input type="text" name="stats" placeholder="special attack stat"><br>
+                    special defense: <input type="text" name="stats" placeholder="special defense stat"><br>
+                    speed: <input type="text" name="stats" placeholder="speed stat"><br>                  
+  
+                </div>
+            </fieldset>
+            
+            <fieldset>
+            <legend>Damages</legend>
+                <div class="damages">
+                    normal: <input type="text" name="damages" placeholder="normal damags"><br>  
+                    fire: <input type="text" name="damages" placeholder="fire damage"><br>  
+                    water: <input type="text" name="damages" placeholder="water damage"><br>  
+                    electric: <input type="text" name="damages" placeholder="electric damage"><br>  
+                    grass: <input type="text" name="damages" placeholder="grass damage"><br>  
+                    ice: <input type="text" name="damages" placeholder="ice damage"><br>  
+                    fight: <input type="text" name="damages" placeholder="fight damage"><br>  
+                    poison: <input type="text" name="damages" placeholder="poison damage"><br>  
+                    ground: <input type="text" name="damages" placeholder="ground damage"><br>                      
+                    flying: <input type="text" name="damages" placeholder="flying damage"><br>  
+                    psychic: <input type="text" name="damages" placeholder="psychic damage"><br>  
+                    bug: <input type="text" name="damages" placeholder="bug damage"><br>  
+                    rock: <input type="text" name="damages" placeholder="rock damage"><br>  
+                    ghost: <input type="text" name="damages" placeholder="ghost damage"><br>  
+                    dragon: <input type="text" name="damages" placeholder="dragon damage"><br>  
+                    dark: <input type="text" name="damages" placeholder="dark damage"><br> 
+                    steel: <input type="text" name="damages" placeholder="steel damage"><br>   
+                </div>
+            </fieldset>
+
             </form>
     </div>
 </body>

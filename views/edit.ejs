@@ -1,45 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <head>
-        <%- include("./partials/head.ejs", {title: "Update Pokemon"}) %>
-    </head>
-</head>
+    <%- include("./partials/head.ejs", {title: "Edit Pokemon"}) %>
 <body>
-    
+    <%- include("./partials/header.ejs", {title: "Edit Pokemon"}) %> 
+    <div buttoneditdiv>
+        <a href="/Pokedex"><button type="button" id="buttonedit">Home/button></a><br>
+        <a href="/Pokedex/<%=index%>"><button type="button" id="buttonedit">Show</button></a>
+        <input id="buttonedit" type="submit" value="UPDATE">
+    </div>
+
     <div class="container">     
-        <h1>Update Pokemon</h1>
-            <form action="/Pokedex/<%= index %>?_method=PUT" method="POST">
+        <form action="/Pokedex/<%= index %>?_method=PUT" method="POST">
+            <fieldset>
+                <legend>Update Basic Information</legend>
                 <div class="basic">
-                    <h4>Basic Pokemon Information</h4>
-                    Name: <input type="text" name="name" value="<%=pokemonInfo.name%>"><br>
+                    Name: <input type="text" name="name" value="<%=pokemonInfo.name%>">
                     Image: <input type="text" name="img" size="50" value="<%=pokemonInfo.img%>"><br>
                 </div>
-                <hr><br>
-                <div class="type">
-                    <h4>Types</h4>
-                        Type: <input type="text" name="type" size="50" value="<%=pokemonInfo.type.toString()%>"><br>
-                </div>
+            </fieldset>
 
-                <hr><br>
-              
+            <fieldset>
+                <legend class="legend">Types</legend>
+                <div class="type">
+                    Type: <input type="text" name="type" size="50" value="<%=pokemonInfo.type.toString()%>"><br>
+                </div>
+            </fieldset>
+            
+            <fieldset>
+                <legend class="legend">Stats</legend>
                 <div class="stats"> 
-                    <h4>Stats</h4>
                     <% Object.entries(pokemonInfo.stats).forEach((v, index) =>{ %>
-                        <%=v[0]%>: <input type="text" name="stats" value="<%=v[1]%>"><br>
+                            <%=v[0]%>: <input type="text" name="stats" value="<%=v[1]%>"><br>
                         <% }) %> 
-              
-                <hr><br>
+                </div>
+            </fieldset>
+            
+            <fieldset>
+            <legend>Damages</legend>
                 <div class="damages">
-                    <h4>Damages</h4>    
-                    <% Object.entries(pokemonInfo.damages).forEach((v, index) =>{ %>
+                        <% Object.entries(pokemonInfo.damages).forEach((v, index) =>{ %>
                         <%=v[0]%>: <input type="text" name="damages" value="<%=v[1]%>"><br>
                         <% }) %> 
                 </div>
+            </fieldset>
 
-                <hr><br>
-
-                <input type="submit" value="UPDATE">
             </form>
     </div>
 </body>

@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <%- include("./partials/head.ejs", {title: "Pokedex"}) %>
-    </head>
+    <%- include("./partials/head.ejs", {title: "Pokedex"}) %>
 <body>
-    <h1 id="pagetitle">Pokedex</h1>
-    <div class="newbutdiv">
+    <%- include("./partials/header.ejs", {title: "Pokedex"}) %>       
+    <div>
             <a href="/Pokedex/new" >
-                <button type="button" id="newbut">Add a New Pokemon</button>
+                <button type="button" id="buttonedit">Add a New Pokemon</button>
             </a>
     </div>
     <div class="papa-container">
@@ -20,6 +18,8 @@
                 <h4><b><%=v.name%></b></h4>
                 <div class="buttons">
                     <a href="/Pokedex/<%=index%>"><button type="button" id="button">Show</button>
+                    </a>
+                    <a href="/Pokedex/<%=index%>/edit"><button type="button" id="button">Edit</button>
                     </a>
                     <form action="/Pokedex/<%= index %>?_method=DELETE" method="POST" >
                         <input id="button" type="submit" value="Delete">

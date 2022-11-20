@@ -14,7 +14,6 @@
   justify-content: center;
   background-color: blue;
   padding: 10px 20px 10px 40px;
-  margin-top: 100px;
   margin-bottom: 50px;
   color: yellow;
   border: 8px solid red;
@@ -41,7 +40,7 @@
     /* margin: 0 40px 0 0; */
     margin: 0 auto;
     width: 200px;
-    height: 350px;
+    height: 400px;
     text-align: center;
     padding: 2rem 0 2rem 0;
     background-color: red;
@@ -54,6 +53,7 @@
     padding: 2px 16px;
     position: relative;
     text-align: center;
+    display: block;
    }
 
   .poke-image {
@@ -81,6 +81,20 @@
     position: relative;
   }
 
+  #buttonedit {
+    text-align: justify;
+    background-color: blue;
+    font-weight: bold;
+    color: yellow;
+    border-right: 8px solid cornsilk;
+    border-left: 8px solid cornsilk;
+    text-decoration: none;
+  }
+
+  .buttoneditdiv {
+    text-align: center;
+  
+  }
   .stats {
     text-decoration: none;
   }
@@ -93,6 +107,35 @@
     margin-right: auto;
     border-style: inset;
     border-width: 1px;
+  }
+
+  fieldset {
+      border-width: 2px;
+      color: red;
+    }
+
+  .basic {
+    text-align: center;
+  }
+
+  .type{
+    text-align: center;
+  }
+
+  .stats {
+    text-align: center;
+  }
+
+  .damages {
+    text-align: center;
+  }
+
+  .showname {
+    text-align: center;
+  }
+  .showimage {
+    border: 8px solid red;
+    border-radius: 5px;
   }
   /* .papa-container {
     display: inline-block;

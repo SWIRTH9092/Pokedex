@@ -1,20 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <head>
-        <%- include("./partials/head.ejs", {title: "View Pokemon"}) %>
-    </head>
-</head>
+   <%- include("./partials/head.ejs", {title: "View Pokemon"}) %>
 <body>
-    <div class="container">
+    <%- include("./partials/header.ejs", {title: "View Pokemon"}) %>
+    <div style="display: block-line;">
+            <a href="/Pokedex" ><button id="buttonedit" >Home</button></a>
+            <a href="/Pokedex/<%= index %>/edit" type="button"><button id="buttonedit">EDIT</button></a>
+            <form action="/Pokedex/<%= index %>?_method=DELETE" method="POST" >
+                <input id="button" type="submit" value="Delete">
+    </div>
+    <div class="container showname">
         <h1><%=pokemonInfo.name%></h1>
+
         <div>
-            <a href="/Pokedex"><button type="button">BACK</button></a>
-            <a href="/Pokedex/<%= index %>/edit"><button>EDIT</button></a>
-        </div>
-        <div>
-            <img src="<%=pokemonInfo.img%>"  alt="<%=pokemonInfo.name%>">
+            <img src="<%=pokemonInfo.img%>"  alt="<%=pokemonInfo.name%>" class="showimage">
         </div>
         <div class="type">
             <ul>Pokemon Types</ul>
