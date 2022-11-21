@@ -39,7 +39,8 @@ router.get('/Pokedex', (req,res) => {
 
 // DESTROY Route - DELETE to /Pokedex/:index - deletes the specified
 router.delete("/Pokedex/:index", (req, res) => {
-    //splice the item out of the array
+  console.log("req.parms.index", req.params.index)  
+  //splice the item out of the array
     pokemon.splice(req.params.index, 1)
     // redirect user back to index
     res.redirect("/Pokedex")  

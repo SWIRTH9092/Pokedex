@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+One');
 /* @media (min-width: 350) {
   #card {
     display: flex;
@@ -9,13 +10,57 @@
 * body {
     background-color: cornsilk
 }
+/*  grid container rows - index
+row 1 - header
+row 2 - buttons
+row 3 - webpage   */
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 5rem 5rem
+   fr; 
+  justify-items: center; 
+  align-items:  center;
+}
+
+.grid-row-1 {
+  grid-area: 1 / 1 / 1 / 1;}
+
+#grid-row-2 {
+  grid-area: 2 / 1 / 2 / 1;
+  display: inline;
+  text-align: center;
+  line-height: 1.6rem;
+  padding: 0 2rem 0 2rem;
+}
+
+#grid-row-3 {
+  grid-area: 3 / 1 / 3 / 1;
+  /* border: 2px dashed red; */
+  display: inline-blokc;
+
+  justify-content: space-between;
+  justify-items: top;
+  align-items: top;
+}
+
 #pagetitle {
+  font-family: 'Mochiy Pop One', sans-serif;
   text-align: center;
   background-color: blue;
   padding: 10px 20px 10px 40px;
   margin-bottom: 50px;
   color: yellow;
   border: 8px solid red;
+}
+
+#button-grid-2 {
+  display:  inline-block;
+  background-color: blue;
+  color:  yellow;
+  font-weight: bold;
+  text-align:center;
 }
 
 .newbutdiv {
@@ -39,7 +84,7 @@
     /* margin: 0 40px 0 0; */
     margin: 0 auto;
     width: 200px;
-    height: 400px;
+    height: 350px;
     text-align: center;
     padding: 2rem 0 2rem 0;
     background-color: red;
@@ -80,7 +125,16 @@
     color: black;
     position: relative;
   }
-
+  #buttongrid {
+    display: inline-block;
+    text-align: center;
+    background-color: blue;
+    font-weight: bold;
+    color: yellow;
+    border-right: 8px solid cornsilk;
+    border-left: 8px solid cornsilk;
+    text-decoration: none;
+  }
   #buttonedit {
     text-align: justify;
     background-color: blue;
@@ -117,6 +171,7 @@
       font-size: 1.25rem;
     }
 
+
  
   .basic {
     text-align: center;
@@ -133,7 +188,6 @@
     border: none;
     text-align: left;
    
-
   }
   #showcard {
     display: inline-block;
