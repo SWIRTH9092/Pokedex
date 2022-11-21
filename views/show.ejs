@@ -3,11 +3,13 @@
    <%- include("./partials/head.ejs", {title: "View Pokemon"}) %>
 <body>
     <%- include("./partials/header.ejs", {title: "View Pokemon"}) %>
-    <div style="display: block-line;">
-            <a href="/Pokedex" ><button id="buttonedit" >Home</button></a>
-            <a href="/Pokedex/<%= index %>/edit" type="button"><button id="buttonedit">EDIT</button></a>
+    <div id="grid-row-2">
+            <a href="/Pokedex" >
+                <button type="button" id="button-grid-2">Home</button></a>
+            <a href="/Pokedex/<%= index %>/edit">
+                <button type="button" id="button-grid-2">EDIT</button></a>
             <form action="/Pokedex/<%= index %>?_method=DELETE" method="POST" >
-                <input id="button" type="submit" value="Delete">
+                <input id="button-grid-2" type="submit" value="Delete">
     </div>
     <div class="container showname">
        <div id="showcard">

@@ -24,13 +24,12 @@ row 3 - webpage   */
   align-items:  center;
 }
 
-.grid-row-1 {
+#grid-row-1 {
   grid-area: 1 / 1 / 1 / 1;}
 
 #grid-row-2 {
   grid-area: 2 / 1 / 2 / 1;
-  display: inline;
-  text-align: center;
+  display: inline-block;
   line-height: 1.6rem;
   padding: 0 2rem 0 2rem;
 }
@@ -46,10 +45,8 @@ row 3 - webpage   */
 }
 
 #pagetitle {
-  font-family: 'Mochiy Pop One', sans-serif;
   text-align: center;
   background-color: blue;
-  padding: 10px 20px 10px 40px;
   margin-bottom: 50px;
   color: yellow;
   border: 8px solid red;
@@ -174,12 +171,14 @@ row 3 - webpage   */
 
  
   .basic {
-    text-align: center;
+    text-align: left;
+    margin: 0 3rem 0 3rem;
   }
 
   .type{
-    text-align: center;
     text-decoration: none;
+    text-align: left;
+    margin: 0 3rem 0 3rem;
   }
 
   .stats {
@@ -187,8 +186,16 @@ row 3 - webpage   */
     margin: 0 3rem 0 3rem;
     border: none;
     text-align: left;
-   
-  }
+     }
+  
+     .damages {
+      text-align: center;
+      margin: 0 3rem 0 3rem;
+      border: none;
+      text-align: left;
+       }
+
+
   #showcard {
     display: inline-block;
     text-align: justify;
